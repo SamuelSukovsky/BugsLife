@@ -17,6 +17,30 @@ private:
 public:
     Hopper(int id, int size, pair<int, int> position, DIRECTION dir, int hopLength);
 
+    void display() override
+    {
+        cout << id << " " << type << " (" << position.first << "," << position.second << ") " << size << " " << hopLength << " ";
+        switch (dir)
+        {
+            case NORTH:
+                cout << "North";
+                break;
+            case EAST:
+                cout << "East";
+                break;
+            case SOUTH:
+                cout << "South";
+                break;
+            case WEST:
+                cout << "West";
+                break;
+        }
+        if (alive)
+            cout << " Alive" << endl;
+        else
+            cout << " Dead" << endl;
+    }
+
     void move() override
     {
         if (alive)

@@ -16,10 +16,10 @@ Bug::Bug(string type, int id, int size, pair<int, int> position, DIRECTION dir) 
 
 void Bug::displayPath()
 {
-    cout << id << " " << type << ": ";
+    cout << id << " " << type << " ";
     for (pair<int, int> pos : path)
     {
-        cout << "(" << pos.first << ", " << pos.second << ") ";
+        cout << "(" << pos.first << "," << pos.second << ") ";
     }
     cout << endl;
 }

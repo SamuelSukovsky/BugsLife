@@ -20,10 +20,13 @@ private:
 public:
     Board(int width, int height);
 
+    void initialise(string fileName);
+
     void addBug(Bug* bug);
     int getWidth() const;
     int getHeight() const;
     void tap();
+    void displayBugs();
     void displayPaths();
 };
 

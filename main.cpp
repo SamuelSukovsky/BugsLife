@@ -1,88 +1,82 @@
 #include <iostream>
-#include <fstream>
-#include <sstream>
 
 #include "classes/Board.h"
-#include "classes/Bug.h"
-#include "classes/Crawler.h"
-#include "classes/Hopper.h"
 
 int main()
 {
     srand(time(nullptr));
     Board board = Board(10, 10);
+    bool running = true;
+    string input;
+    int in;
 
-    ifstream fin("bugs.txt");
-    if (fin)
+    while (running)
     {
-        while(!fin.eof())
+        cout << "\n1. Initialize Bug Board (load data from file)\n"
+                "2. Display all Bugs\n"
+                "3. Find a Bug (given an id)\n"
+                "4. Tap the Bug Board (causes move all, then fight/eat)\n"
+                "5. Display Life History of all Bugs (path taken)\n"
+                "6. Display all Cells listing their Bugs\n"
+                "7. Run simulation (generates a Tap every second)\n"
+                "8. Exit (write Life History of all Bugs to file)\n\n"
+                "Enter command:";
+        cin >> input;
+
+        try
         {
-            string input;
-            getline(fin, input);
-            stringstream line(input);
-
-            getline(line, input, ';');
-            string type = input;
-
-            getline(line, input, ';');
-            int id = stoi(input);
-
-            pair <int, int> position;
-            getline(line, input, ';');
-            position.first = stoi(input);
-            getline(line, input, ';');
-            position.second = stoi(input);
-
-            getline(line, input, ';');
-            int direction = stoi(input);
-
-            getline(line, input, ';');
-            int size = stoi(input);
-
-            DIRECTION dir;
-            switch (direction)
+            in = stoi(input);
+        }
+        catch(exception e)
+        {
+            in = 0;
+        }
+        switch (in)
+        {
+            case 1 :
             {
-                case 1 :
-                    dir = NORTH;
-                    break;
-                case 2 :
-                    dir = EAST;
-                    break;
-                case 3 :
-                    dir = SOUTH;
-                    break;
-                case 4 :
-                    dir = WEST;
-                    break;
-                default:
-                    break;
+                board.initialise("bugs.txt");
+                break;
             }
-
-            if (type == "C")
+            case 2 :
             {
-                Bug* bug = new Crawler(id, size, position, dir);
-                board.addBug(bug);
+                board.displayBugs();
+                break;
             }
-            else if (type == "H")
+            case 3 :
             {
-                getline(line, input, ';');
-                int hopLength = stoi(input);
-                Bug* bug = new Hopper(id, size, position, dir, hopLength);
-                board.addBug(bug);
+                break;
+            }
+            case 4 :
+            {
+                board.tap();
+                break;
+            }
+            case 5 :
+            {
+                board.displayPaths();
+                break;
+            }
+            case 6 :
+            {
+                break;
+            }
+            case 7 :
+            {
+                break;
+            }
+            case 8 :
+            {
+                running = false;
+
+                break;
+            }
+            default:
+            {
+                cout << "Invalid input" << endl;
             }
         }
     }
-    else
-    {
-        cout << "Unable to open file" << endl;
-    }
-
-
-    for (int i = 0; i < 15; i++)
-    {
-        board.tap();
-    }
-    board.displayPaths();
 
     return 0;
 }

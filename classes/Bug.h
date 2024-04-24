@@ -26,6 +26,7 @@ protected:
 
     list<pair<int,int>> path;
 public:
+    virtual void display() = 0;
     virtual void move() = 0;
     virtual bool isWayBlocked() = 0;
     void displayPath();
