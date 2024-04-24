@@ -7,19 +7,23 @@
 
 #include <list>
 #include <utility>
+#include <string>
 
 using namespace std;
 enum DIRECTION {NORTH, SOUTH, EAST, WEST};
+
 class Bug
 {
 protected:
-    Bug(int id, int size, pair<int, int> position, DIRECTION dir);
+    Bug(string type, int id, int size, pair<int, int> position, DIRECTION dir);
 
+    string type;
     int id;
     int size;
     bool alive;
     pair<int, int> position;
     DIRECTION dir;
+
     list<pair<int,int>> path;
 public:
     virtual void move() = 0;

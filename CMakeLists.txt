@@ -9,4 +9,6 @@ add_executable(BugsLife main.cpp
         classes/Crawler.cpp
         classes/Crawler.h
         classes/Hopper.cpp
-        classes/Hopper.h)
+        classes/Hopper.h
+        classes/Board.cpp
+        classes/Board.h)
