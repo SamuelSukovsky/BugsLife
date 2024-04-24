@@ -1,0 +1,3 @@
+C:/Users/samik/Documents/BugsLife/cmake-build-debug/CMakeFiles/BugsLife.dir
+C:/Users/samik/Documents/BugsLife/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/samik/Documents/BugsLife/cmake-build-debug/CMakeFiles/rebuild_cache.dir
