@@ -11,4 +11,5 @@ add_executable(BugsLife main.cpp
         classes/Hopper.cpp
         classes/Hopper.h
         classes/Board.cpp
-        classes/Board.h)
+        classes/Board.h
+        classes/Drifter.cpp)

@@ -21,15 +21,18 @@ public:
     Board(int width, int height);
 
     void initialise(string fileName);
+    void save(string fileName);
 
     void addBug(Bug* bug);
     int getWidth() const;
     int getHeight() const;
-    void tap();
-    void displayBugs();
-    void displayPaths();
-};
 
+    int tap();
+    void displayBugs();
+    void findBug(int id);
+    void displayPaths();
+    void displayCells();
+};
 
 
 #endif //BUGSLIFE_BOARD_H

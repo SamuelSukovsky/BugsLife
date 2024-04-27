@@ -26,10 +26,22 @@ protected:
 
     list<pair<int,int>> path;
 public:
-    virtual void display() = 0;
+    string getType();
+    int getId();
+    int getSize();
+    bool getAlive();
+    pair<int, int> getPosition();
+    string pathToString();
+
+    void setAlive(bool in);
+
+    void eat(Bug* bug);
+
+    virtual string toString() = 0;
     virtual void move() = 0;
     virtual bool isWayBlocked() = 0;
-    void displayPath();
+
+    static bool sizeComparator(Bug* bug1, Bug* bug2);
 };
 
 

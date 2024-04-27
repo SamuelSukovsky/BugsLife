@@ -1,4 +1,6 @@
 #include <iostream>
+#include <thread>
+#include <conio.h>
 
 #include "classes/Board.h"
 
@@ -45,6 +47,18 @@ int main()
             }
             case 3 :
             {
+                cout << "Enter bug id:";
+                cin >> input;
+
+                try
+                {
+                    in = stoi(input);
+                    board.findBug(in);
+                }
+                catch(exception e)
+                {
+                    cout << "Invalid input" << endl;
+                }
                 break;
             }
             case 4 :
@@ -59,16 +73,31 @@ int main()
             }
             case 6 :
             {
+                board.displayCells();
                 break;
             }
             case 7 :
             {
+                bool simulating = true;
+                while (simulating)
+                {
+                    if (board.tap() <= 1)
+                    {
+                        simulating = false;
+                    }
+                    cout << "tap" << endl;
+                    this_thread::sleep_for (chrono::milliseconds (10));
+                    if (kbhit())
+                    {
+                        simulating = false;
+                    }
+                }
                 break;
             }
             case 8 :
             {
+                board.save("bugs_life_history_date_time.out");
                 running = false;
-
                 break;
             }
             default:
