@@ -4,7 +4,7 @@
 
 #include "Crawler.h"
 
-Crawler::Crawler(int id, int size, pair<int, int> position, DIRECTION dir) : Bug("Crawler", id, size, position, dir)
+Crawler::Crawler(int id, int size, pair<int, int> position, DIRECTION dir) : Bug("Crawler ", id, size, position, dir)
 {
 
 }

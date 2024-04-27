@@ -20,6 +20,7 @@ Board::Board(int width, int height) : width{width}, height{height}, bug_vector{}
 
 void Board::initialise(string fileName)
 {
+    bug_vector.clear();
     ifstream fin(fileName);
     if (fin)
     {
