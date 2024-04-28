@@ -159,10 +159,6 @@ int Board::tap()
                         {
                             bug1->eat(bug2);
                         }
-                        else if (bug1->getSize() < bug2->getSize())
-                        {
-                            bug2->eat(bug1);
-                        }
                         else
                         {
                             switch (rand() % 2)

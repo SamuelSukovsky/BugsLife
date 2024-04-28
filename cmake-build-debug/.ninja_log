@@ -35,3 +35,6 @@
 2	303	7359580925787491	CMakeFiles/BugsLife.dir/classes/Crawler.cpp.obj	2b37580365c84c23
 12	303	7359580925787491	CMakeFiles/BugsLife.dir/classes/Drifter.cpp.obj	ad2c820dbf6f38f8
 303	418	7359580926894579	BugsLife.exe	8da09e08dd5e9037
+4	425	7359689805267435	CMakeFiles/BugsLife.dir/main.cpp.obj	d490222ee00f7084
+9	478	7359689805786704	CMakeFiles/BugsLife.dir/classes/Board.cpp.obj	53711e51f45cdf72
+478	617	7359689807140215	BugsLife.exe	8da09e08dd5e9037

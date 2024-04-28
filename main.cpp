@@ -86,7 +86,7 @@ int main()
                         simulating = false;
                     }
                     cout << "tap" << endl;
-                    this_thread::sleep_for (chrono::milliseconds (10));
+                    this_thread::sleep_for (chrono::milliseconds (1000));
                     if (kbhit())
                     {
                         simulating = false;
